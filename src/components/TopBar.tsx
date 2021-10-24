@@ -1,33 +1,32 @@
 import React from 'react'
-import {
-  AppBar,
-  makeStyles,
-  Toolbar,
-  Typography
-} from '@material-ui/core'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from '@mui/icons-material/Menu'
 
-const useStyles = makeStyles((theme) => ({
-  appbar: {
-    height: '60px'
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block'
-    }
-  }
-}))
+import logo from '../img/stones-throw-logo.png'
 
 const TopBar: React.FC = () => {
-  const classes = useStyles()
   return (
-    <AppBar position="fixed" className={classes.appbar}>
-      <Toolbar>
-        <Typography className={classes.title} variant="h6" noWrap>
-          Material-UI
-        </Typography>
-      </Toolbar>
-    </AppBar>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position='static'>
+        <Toolbar>
+          <IconButton
+            size='large'
+            edge='start'
+            color='inherit'
+            aria-label='menu'
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <img src={logo} />
+          <Button color='inherit'>Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
   )
 }
 

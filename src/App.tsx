@@ -1,8 +1,14 @@
 import React from 'react'
-import Home from './Home'
+import CssBaseline from '@mui/material/CssBaseline'
+import Home from './views/Home'
 
 function App() {
-  return <Home />
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Home />
+    </React.Fragment>
+  )
 }
 
 export default App
